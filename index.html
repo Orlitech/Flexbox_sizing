@@ -4,44 +4,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Column Layout Methods</title>
+  <title>Flexbox Sizing Exercise</title>
   <style>
-    p {
-      padding: 0;
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       margin: 0;
-      font-weight: 700;
-    }
-
-    li {
-      list-style: none;
-       
+      background-color: #f0f0f0;
     }
 
     .container {
-      padding: 10px;
-      background-color: gold;
       display: flex;
+      gap: 10px;
+      width: 80%;
+      background-color: #ddd;
+      padding: 20px;
+
+    }
+
+    .container>* {
+      background-color: #B0926A
+;
+      color: white;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 1dvh;
+    }
+
+    textarea {
+      width: 80%;
+      min-height: 150px;
+      margin-top: 20px;
+      resize: vertical;
+      font-family: monospace;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #706233;
+      color: white;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 1dvh;
+    }
+
+    button:hover {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #E1C78F;
+      color: white;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 1dvh;
+    }
+    .parent {
+      display: flex;
+      gap: 10px;
+      width: 80%;
+      background-color: #ddd;
+      padding: 20px;
+      margin: 2rem;
       justify-content: space-between;
     }
 
-    a{
-      text-decoration: none;
-      color: black
+    .parent>* {
+      background-color: seagreen;
+      color: white;
+      font-size: 18px;
+      padding: 20px;
+      border: 2px solid white;
+
+    }
+
+    .one {
+      flex: 0 1 200px;
+    }
+
+    .two {
+      flex: 0 0 200px;
+    }
+
+    .three {
+      flex: 0 0 400px;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <p>Page Layout Methods</p>
-
-    <li><a href="./html-table.html">HTML Table</a></li>
-    <li><a href="./inline-block.html">Inline-Block</li>
-    <li><a href="./absolute-position.html">Absolute Positioning</li>
-    <li><a href="./float.html">Float</li>
-    <li><a href="./flex.html">Flexbox</li>
-
+  <h1>Orlitech Flexbox Sizing </h1>
+  <div class="parent">
+    <div class="one">Item 1: 200px</div>
+    <div class="two">Item 2: 200px</div>
+    <div class="three">Item 3: 400px</div>
   </div>
+  <div class="container" id="container">
+    <div class="item1">Item 1: 200px</div>
+    <div class="item2">Item 2: 200px</div>
+    <div class="item3">Item 3: 400px</div>
+  </div>
+  <textarea id="user-css" placeholder="Write your CSS code here..." rows="25">
+/* Write your CSS code below to make the blue items size, grow and shrink like the green ones.*/
+
+.container {
+  
+}
+  
+.container > * {
+
+}
+
+.item1 {
+
+}
+
+.item2 {
+
+}
+
+.item3 {
+
+}
+</textarea>
+  <button onclick="applyUserCss()">Apply CSS</button>
+
+  <script>
+    function applyUserCss() {
+      const userCss = document.getElementById('user-css').value;
+      const style = document.createElement('style');
+      style.innerHTML = userCss;
+      document.head.appendChild(style);
+    }
+  </script>
 </body>
 
 </html>
+
